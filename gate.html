@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="gate.css">
+
+
+<div class="gate-overlay" id="gateOverlay">
+  <div class="gate-box">
+    <div class="gate-icon">🔒</div>
+    <div class="gate-title">需要密码</div>
+    <div class="gate-sub">此页面受密码保护。<br>请输入访问密码以继续。</div>
+    <input type="password" class="gate-input" id="gateInput" placeholder="输入密码" autocomplete="off">
+    <div class="gate-error" id="gateError"></div>
+    <button class="gate-btn" id="gateBtn" onclick="submitGate()">验证</button>
+    <div class="gate-hint">总有那风吹不散的认真</div>
+  </div>
+</div>
+
+
+<div id="lockedContent"></div>
+
+<script src="gate.js"></script>

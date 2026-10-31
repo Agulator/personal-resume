@@ -1,0 +1,129 @@
+
+.gate-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 10, 10, 0.96);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gate-fadeIn 0.4s ease;
+}
+
+.gate-overlay.hidden { display: none; }
+
+
+.gate-box {
+  max-width: 420px;
+  width: 90%;
+  padding: 48px 40px;
+  text-align: center;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 2px;
+}
+
+.gate-box .gate-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.gate-box .gate-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e8e4df;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+}
+
+.gate-box .gate-sub {
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 300;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* 密码输入框 */
+.gate-box .gate-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #e8e4df;
+  font-size: 0.95rem;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.25s;
+  border-radius: 2px;
+}
+
+.gate-box .gate-input:focus {
+  border-color: #c4a882;
+}
+
+.gate-box .gate-input::placeholder {
+  color: #555;
+}
+
+/* 错误提示 */
+.gate-box .gate-error {
+  display: none;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #c44a4a;
+}
+
+.gate-box .gate-error.show {
+  display: block;
+  animation: gate-fadeIn 0.3s ease;
+}
+
+/* 验证按钮 */
+.gate-box .gate-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #222;
+  border: 1px solid #333;
+  color: #e8e4df;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: inherit;
+  border-radius: 2px;
+}
+
+.gate-box .gate-btn:hover {
+  background: #c4a882;
+  color: #111;
+  border-color: #c4a882;
+}
+
+.gate-box .gate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 底部水印（可删除） */
+.gate-box .gate-hint {
+  margin-top: 20px;
+  font-size: 0.72rem;
+  color: #444;
+  letter-spacing: 0.04em;
+}
+
+/* 受保护内容容器（初始为空，验证通过后 JS 注入） */
+#lockedContent { /* 空容器，无需特殊样式 */ }
+
+/* 动画 */
+@keyframes gate-fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
