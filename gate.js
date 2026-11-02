@@ -17,8 +17,8 @@
 
 (function () {
   // ⚠️ 必改：替换为你的 Cloudflare Worker URL
-  const GATE_API = 'https://resume.glj520.eu.org/api/verify';
-  const CONTENT_API = 'https://resume.glj520.eu.org/api/content';
+  const GATE_API = 'https://resume-gate.yzglj.eu.org/api/verify';
+  const CONTENT_API = 'https://resume-gate.yzglj.eu.org/api/content';
 
   // Token 在 localStorage 中的 key（可自定义）
   const STORAGE_KEY = 'gate_session_token';
